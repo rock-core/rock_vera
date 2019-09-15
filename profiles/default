@@ -26,4 +26,6 @@ set rules {
   T017
   T018
   T019
+  no_space_between_brackets
+  no_space_between_parenthesis
 }
