@@ -25,4 +25,5 @@ set rules {
   T019
   no_space_between_brackets
   no_space_between_parenthesis
+  space_and_curly_brackets
 }
