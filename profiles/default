@@ -2,7 +2,6 @@
 
 set rules {
   F001
-  F002
   L001
   L002
   L003
@@ -19,8 +18,6 @@ set rules {
   T008
   T009
   T010
-  T011
-  T013
   T015
   T016
   T017
@@ -28,4 +25,5 @@ set rules {
   T019
   no_space_between_brackets
   no_space_between_parenthesis
+  space_and_curly_brackets
 }
