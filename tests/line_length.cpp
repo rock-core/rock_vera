@@ -1,0 +1,8 @@
+#define TEST_F(x) void x()
+
+void a_line_that_is_juuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuust_right() {
+}
+void a_line_that_is_tooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo_long() {
+}
+TEST_F(a_test_line_that_is_tooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo_long_but_thats_fine) {
+}
