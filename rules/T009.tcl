@@ -9,8 +9,25 @@ foreach f [getSourceFileNames] {
         if {$preceding == {}} {
             report $f $line "comma should not be preceded by whitespace"
         } else {
+            # Catch initializer lists aligned on the colon
+            set aligned_with_colon 0
+
+            set i 1
+            while {[expr $line - $i] > 0} {
+                set lineI [expr $line - $i]
+                set sameColumnOneLineBefore [getTokens $f $lineI $column $lineI [expr $column + 1] {}]
+                set c [lindex [lindex $sameColumnOneLineBefore 0] 3]
+                if {$c == "colon"} {
+                    set aligned_with_colon 1;
+                    break
+                } elseif {$c != "comma"} {
+                    break
+                }
+                incr i
+            }
+
             set lastPreceding [lindex [lindex $preceding end] 3]
-            if {$lastPreceding == "space"} {
+            if {$aligned_with_colon == 0 && $lastPreceding == "space"} {
                 report $f $line "comma should not be preceded by whitespace"
             }
         }
