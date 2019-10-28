@@ -6,6 +6,9 @@ set maxLength [getParameter "max-line-length" 100]
 foreach f [getSourceFileNames] {
     set lineNumber 1
     foreach line [getAllLines $f] {
+        if {[string match TEST* $line] == 1} {
+            continue
+        }
         if {[string length $line] > $maxLength} {
             report $f $lineNumber "line is longer than ${maxLength} characters"
         }
